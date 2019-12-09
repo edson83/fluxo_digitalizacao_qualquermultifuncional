@@ -1,0 +1,17 @@
+%DisplayForm
+  %Script 
+    <![CDATA[
+    %UiScreen(infoLevel="Normal")
+      %AutoTransition 50
+      %Operations
+        %Op{:type => "Submit", :action => @param[:submit]}
+        %Op{:type => "Back", :action => @param[:back]}
+      %IoScreen
+        %IoObject
+          %Title= @param[:userid][:objtitle]
+          %Description= @param[:userid][:description]
+          %Selection{:id => "userid", :multiple => "false"}
+            - @param[:userid][:users].each do |user|
+              %Item{:value =>  user[:id]}
+                %Label= user[:name]
+    ]]>

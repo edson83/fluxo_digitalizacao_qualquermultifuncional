@@ -1,0 +1,19 @@
+﻿%DisplayForm
+  %Script 
+    <![CDATA[
+    %UiScreen(infoLevel="Normal")
+      %Title= @param[:pagetitle]
+      %AutoTransition= 100
+      %Operations
+        - if @param[:submit]
+          %Op{:type => "Submit", :action => @param[:submit]}
+        - if @param[:skipgo]
+          %Op{:type => "SkipGo", :action => @param[:skipgo]}
+        - if @param[:back]
+          %Op{:type => "Back", :action => @param[:back]}
+      %IoScreen
+        %IoObject
+          %Title= @param[:objtitle]
+          %Description= @param[:description]
+          %Message= @param[:msgbody]
+    ]]>

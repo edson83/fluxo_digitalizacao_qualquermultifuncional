@@ -1,0 +1,19 @@
+﻿%IoScanAndSend
+  %TxProfiles
+    %Ftp
+      %FtpParams
+        %FileName= @param[:name_scan]
+        %Host= @param[:host]
+        %User= @param[:user]
+        %Password= @param[:pass]
+        %StoreDir= @param[:store]
+        %PassiveMode= @param[:passive]
+        %PortNum= @param[:port]
+  - if @param[:url][:fin]
+    %JobFinAckUrl= @param[:url][:fin]
+    %FileNameFixed= true
+    %ColorMode= @param[:colormode]
+    %Filetype= @param[:filetype]
+    %Resolution= @param[:resolution]
+    %DocSize= @param[:docsize]
+    %DuplexScanEnable= @param[:duplex]
